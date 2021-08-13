@@ -1,0 +1,45 @@
+package spring_introduction;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class PersonConfigBean {
+
+    private Pet pet;
+    @Value("${person.surname}")
+    private String surName;
+    @Value("${person.age}")
+    private int age;
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public PersonConfigBean(Pet pet) {
+        this.pet = pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+    public void callYourPet() {
+        System.out.println("Hello pet!");
+        pet.say();
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
